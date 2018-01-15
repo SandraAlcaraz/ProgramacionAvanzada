@@ -93,19 +93,33 @@ void inserta(int key, int numero){
   }
 
   int main() {
+
+     int arreglo[] = {12, 7, 1, 3, 8};
+     int n = sizeof(arreglo) / sizeof(int);
+
+     int target = 4;
+
+
      dummyItem = (struct Casilla*) malloc(sizeof(struct Casilla));
      dummyItem->numero = -1;
      dummyItem->key = -1;
 
-     inserta(1, 20);
-     inserta(2, 70);
-     inserta(42, 80);
-     inserta(4, 25);
-     inserta(12, 44);
-     inserta(14, 32);
-     inserta(17, 11);
-     inserta(13, 78);
-     inserta(37, 97);
+     for(int i=0;i<n;i++){
+       inserta(arreglo[i],i);
+     }
+int k;
+
+
+     for(int i=0;i<n;i++){
+       int k= busca(arreglo[i]);
+      int resta=target-k;
+      item = busca(resta);
+      if(item=!NULL){
+
+          printf("( %d,  %d) \n", i, item->key);
+      }
+     }
+
 
      display();
      item = busca(37);
