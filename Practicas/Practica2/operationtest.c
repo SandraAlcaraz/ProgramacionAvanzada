@@ -1,37 +1,45 @@
 #include <stdio.h>
 #include "operations.h"
 
-void printTestMenssage(int condition, char *, char *) ;
+void printTestMessage(int condition, char *, char *) ;
 
-void testSubstraction(void);
-void testAddtion(void);
+int testSubstraction(void);
+int testAddtion(void);
 
 int main() {
 //test add
 
-printTestMenssage(testAddtion(),
+printTestMessage(testAddtion(),
                     "add test passed",
                   "add test failed");
 
   //test substraction
-printTestMenssage(testSubstraction,
+printTestMessage(testSubstraction(),
                     "substraction test passed",
                   "substraction test failed");
-
     return 0;
 }
-void testSubstraction(void ) {
+void printTestMessage(int condition, char *msgPassed, char *msgFailed){
+  if(condition){
+    printf("%s\n",msgPassed );
+  }
+  else{
+    printf("%s\n",msgFailed );
+  }
+}
+
+int testSubstraction( ) {
   int x=12;
   int y=1;
   int result2=substraction(x,y);
   int expected2=x-y;
-  return expected2;
+  return result2==expected2;
 }
-void testAddtion(void){
+int testAddtion(){
   int a=5;
   int b=-7;
   int result=add(a,b);
   int expected=a+b;
-  return expected;
+  return result==expected;
 
 }
