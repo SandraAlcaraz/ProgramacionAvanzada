@@ -5,6 +5,7 @@ typedef struct s{
   char lastName[20];
   short Id;
   char semester[3];
+  char free;
 }Student;
 int main(){
   char *dbName="student.dat";
@@ -14,6 +15,7 @@ int main(){
     sprintf(pAvanzada[i].lastName, "lastName%i",i);
     pAvanzada[i].Id=i;
     sprintf(pAvanzada[i].semester, "%i",i);
+    pAvanzada[i].free=0;
 
   }
   FILE *data=fopen(dbName,"wb");

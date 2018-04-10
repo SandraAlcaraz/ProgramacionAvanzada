@@ -24,7 +24,7 @@ while(1){
     break;
   }
   if(!strcmp(myStudent.firstName, search)){
-  strcmp(myStudent.firstName,update);
+  myStudent.free=1;
   fseek(data,-1*sizeof(Student),SEEK_CUR);
   fwrite(&myStudent,sizeof(Student),1,data);
     break;
